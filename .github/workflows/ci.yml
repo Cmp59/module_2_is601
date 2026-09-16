@@ -27,10 +27,4 @@ jobs:
         run: python -m pip check
 
       - name: Run tests
-        shell: bash
-        run: |
-          if compgen -G 'test_*.py' > /dev/null || compgen -G '*_test.py' > /dev/null; then
-            python -m pytest
-          else
-            echo 'No test files found; skipping pytest.'
-          fi
+        run: python -m pytest
